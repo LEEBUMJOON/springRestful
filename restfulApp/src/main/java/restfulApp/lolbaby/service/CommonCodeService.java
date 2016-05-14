@@ -9,6 +9,6 @@ public interface CommonCodeService {
 	 * @param CodeType
 	 * @return
 	 */
-	public CommonCodeDTO getCodeName(String CodeType);
+	public CommonCodeDTO getCodeName(String codeId);
 
 }

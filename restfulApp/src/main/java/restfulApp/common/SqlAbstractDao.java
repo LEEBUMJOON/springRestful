@@ -14,9 +14,9 @@ public class SqlAbstractDao {
 	private SqlSessionTemplate sqlSession;
 	
 	protected void printQueryId(String queryId) {
-		if(logger.isDebugEnabled()){
+		
 			logger.debug("\t QueryId  \t:  " + queryId);
-		}
+		
 	}
 	
 	public Object insert(String queryId, Object params){

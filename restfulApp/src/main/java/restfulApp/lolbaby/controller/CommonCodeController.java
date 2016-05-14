@@ -10,20 +10,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import restfulApp.lolbaby.dao.dto.CommonCodeDTO;
 import restfulApp.lolbaby.service.CommonCodeService;
+import restfulApp.lolbaby.service.CommonCodeServiceFactory;
 
 @Controller
 @RequestMapping("/common")
 public class CommonCodeController {
 	
 	final static Logger logger = LoggerFactory.getLogger(CommonCodeController.class);
-	
-	private CommonCodeService commonCodeService;
+
 	
 	 @RequestMapping(value="/{id}", method=RequestMethod.GET)
      @ResponseBody
-     public CommonCodeDTO getRest(@PathVariable("id") String CodeType) {
+     public CommonCodeDTO getRest(@PathVariable("id") String codeId) {
         logger.debug("###get!!");
-        return commonCodeService.getCodeName(CodeType);
+        logger.debug("###get!! :" + codeId);
+        CommonCodeService  commonCodeService =  CommonCodeServiceFactory.getCommonCodeService();
+        return commonCodeService.getCodeName(codeId);
 
      }
 

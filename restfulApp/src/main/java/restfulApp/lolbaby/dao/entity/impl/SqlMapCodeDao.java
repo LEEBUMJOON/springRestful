@@ -6,14 +6,14 @@ import restfulApp.common.SqlAbstractDao;
 import restfulApp.lolbaby.dao.dto.CommonCodeDTO;
 import restfulApp.lolbaby.dao.entity.CodeDao;
 
-public class SqlMapCodeDao extends SqlAbstractDao implements CodeDao {
+public class SqlMapCodeDao  extends SqlAbstractDao  implements CodeDao {
 
 	@Override
-	public CommonCodeDTO getCodeName(String CodeType) {
+	public CommonCodeDTO getCodeName(String codeId) {
 		// TODO Auto-generated method stub
 		HashMap<String,Object> paramMap = new HashMap<String,Object>();
-		
-		return (CommonCodeDTO) selectOne("",paramMap);
+		paramMap.put("codeId", codeId);
+		return (CommonCodeDTO) selectOne("commonSelectCode",paramMap);
 	}
 
 }
