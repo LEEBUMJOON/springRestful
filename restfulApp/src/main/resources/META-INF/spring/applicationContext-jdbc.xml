@@ -39,7 +39,7 @@
 	</bean>
 	
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	  	<property name="basePackage" value="restfulApp.lolbaby" />
+	  	<property name="basePackage" value="restfulApp.lolbaby.dao" />
 	  	<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 </beans>
