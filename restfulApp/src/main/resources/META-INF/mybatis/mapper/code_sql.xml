@@ -4,9 +4,23 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="CodeDao">
 
-<select id="selectBoardList" parameterType="java.util.HashMap" resultType="hashmap">
+<resultMap id="resultMap_commonselectCode" type="CommonCodeDTO">
+  <result property="codeId" column="CODE_ID" />
+  <result property="codeTypeId" column="CODE_TYPE_ID"/>
+  <result property="codeName" column="CODE_NAME"/>
+</resultMap>
+
+<select id="commonSelectCode" parameterType="java.util.HashMap" resultMap="resultMap_commonselectCode">
+
         <![CDATA[
-           
+			           
+			SELECT 
+				CODE_ID
+			    ,CODE_TYPE_ID
+			    ,CODE_NAME
+			    FROM CODE 
+			    WHERE CODE_ID = #codeId#
+				
         ]]>
     </select>
 
