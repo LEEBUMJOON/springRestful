@@ -2,26 +2,28 @@
 <!DOCTYPE mapper PUBLIC 
  "-//mybatis.org//DTD Mapper 3.0//EN" 
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="CodeDao">
+<mapper namespace="restfulApp.lolbaby.dao.entity.CodeDao">
 
-<resultMap id="resultMap_commonselectCode" type="CommonCodeDTO">
-  <result property="codeId" column="CODE_ID" />
-  <result property="codeTypeId" column="CODE_TYPE_ID"/>
-  <result property="codeName" column="CODE_NAME"/>
-</resultMap>
+	<resultMap id="resultMap-commonSelectCode" type="CommonCodeDTO">
+	  <id property="codeId" column="CODE_ID" />
+	  <result property="codeTypeId" column="CODE_TYPE_ID"/>
+	  <result property="codeName" column="CODE_NAME"/>
+	</resultMap>
 
-<select id="commonSelectCode" parameterType="java.util.HashMap" resultMap="resultMap_commonselectCode">
+	<select id="commonSelectCode" parameterType="string" resultMap="resultMap-commonSelectCode">
 
         <![CDATA[
 			           
 			SELECT 
-				CODE_ID
-			    ,CODE_TYPE_ID
-			    ,CODE_NAME
-			    FROM CODE 
-			    WHERE CODE_ID = #codeId#
+				'CODE_ID'
+			    ,'CODE_TYPE_ID'
+			    ,'CODE_NAME'
+			    
 				
         ]]>
     </select>
+    
+
+
 
 </mapper>

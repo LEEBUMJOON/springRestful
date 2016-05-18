@@ -13,4 +13,9 @@
 
 	<typeHandlers>
 	</typeHandlers>
+	
+	<mappers>
+		<mapper resource ="META-INF/mybatis/mapper/codesql.xml" />
+	</mappers>
+	
 </configuration>

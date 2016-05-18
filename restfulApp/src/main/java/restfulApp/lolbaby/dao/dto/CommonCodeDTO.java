@@ -1,5 +1,8 @@
 package restfulApp.lolbaby.dao.dto;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="CommonCodeDTO")
 public class CommonCodeDTO {
 	
 	int codeId;
