@@ -12,7 +12,7 @@ public class SqlAbstractDao {
 	final static Logger logger = LoggerFactory.getLogger(SqlAbstractDao.class);
 	
 	@Autowired
-	private SqlSessionTemplate sqlSession;
+	private SqlSession sqlSession;
 	
 	protected void printQueryId(String queryId) {
 		
