@@ -17,7 +17,7 @@ public class CommonCodeServiceImpl implements CommonCodeService {
 	@Autowired
 	CodeDao   codeDao ;
 	@Override
-	public CommonCodeDTO getCodeName(String codeId) { 	
+	public CommonCodeDTO getCodeName(int codeId)  { 	
 		//CodeDao   codeDao = CodeDaoFactory.getCodeDao();
 		logger.debug("codeId  " + codeId);
 		return codeDao.getCodeName(codeId);
