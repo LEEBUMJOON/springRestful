@@ -14,7 +14,7 @@ public class SqlMapCodeDao  extends SqlAbstractDao  implements CodeDao {
 //	private SqlSession sqlSession;
 	
 	@Override
-	public CommonCodeDTO getCodeName(String codeId) {
+	public CommonCodeDTO getCodeName(int codeId) {
 		// TODO Auto-generated method stub
 		return (CommonCodeDTO) selectOne("commonSelectCode",codeId);
 	}

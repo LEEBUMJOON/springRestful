@@ -5,20 +5,21 @@
 <mapper namespace="restfulApp.lolbaby.dao.entity.CodeDao">
 
 	<resultMap id="resultMap-commonSelectCode" type="CommonCodeDTO">
-	  <id property="codeId" column="CODE_ID" />
+	  <id property="codeId" column="CODE_ID" javaType="int" />
 	  <result property="codeTypeId" column="CODE_TYPE_ID"/>
 	  <result property="codeName" column="CODE_NAME"/>
 	</resultMap>
 
-	<select id="commonSelectCode" parameterType="string" resultMap="resultMap-commonSelectCode">
+	<select id="commonSelectCode" parameterType="int" resultMap="resultMap-commonSelectCode">
 
         <![CDATA[
 			           
 			SELECT 
-				'CODE_ID'
-			    ,'CODE_TYPE_ID'
-			    ,'CODE_NAME'
-			    
+				 CODE_ID
+			    ,CODE_TYPE_ID
+			    ,CODE_NAME
+			    FROM code
+			    WHERE CODE_ID = #{codeId}
 				
         ]]>
     </select>

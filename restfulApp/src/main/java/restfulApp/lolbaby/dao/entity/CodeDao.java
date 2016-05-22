@@ -4,5 +4,5 @@ import restfulApp.lolbaby.dao.dto.CommonCodeDTO;
 
 public interface CodeDao {
 
-	public CommonCodeDTO getCodeName(String codeId);
+	public CommonCodeDTO getCodeName(int codeId);
 }

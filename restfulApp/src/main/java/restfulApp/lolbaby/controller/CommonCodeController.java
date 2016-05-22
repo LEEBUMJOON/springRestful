@@ -23,7 +23,7 @@ public class CommonCodeController {
 	
 	 @RequestMapping(value="/{id}", method=RequestMethod.GET)
      @ResponseBody
-     public CommonCodeDTO getCodeName(@PathVariable("id") String codeId) {
+     public CommonCodeDTO getCodeName(@PathVariable("id") int codeId) {
         logger.debug("###get!!");
         logger.debug("###get!! :" + codeId);
         //CommonCodeService  commonCodeService =  CommonCodeServiceFactory.getCommonCodeService();
