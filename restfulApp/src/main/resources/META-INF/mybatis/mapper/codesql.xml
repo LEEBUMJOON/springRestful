@@ -9,7 +9,7 @@
 	  <result property="codeTypeId" column="CODE_TYPE_ID"/>
 	  <result property="codeName" column="CODE_NAME"/>
 	</resultMap>
-
+	<!-- query call sample -->
 	<select id="commonSelectCode" parameterType="int" resultMap="resultMap-commonSelectCode">
 
         <![CDATA[
@@ -24,6 +24,12 @@
         ]]>
     </select>
     
+    <!-- procedure call sample  -->
+    <select id="commonSelectCodeProc"  parameterType="int" statementType="CALLABLE" resultMap="resultMap-commonSelectCode" >
+
+        {CALL SP_GET_COMMON_CODE( #{codeId} )}
+        
+    </select>
 
 
 
